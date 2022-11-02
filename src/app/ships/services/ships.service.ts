@@ -10,6 +10,6 @@ export class ShipsService {
   constructor( private http: HttpClient) { }
 
   getShipsList() {
-    return this.http.get('https://swapi.dev/api/starships/')
+    return this.http.get('https://swapi.py4e.com/api/starships')
   }
 }
