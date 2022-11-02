@@ -10,8 +10,8 @@ export class ShipsService {
 
   constructor( private http: HttpClient) { }
 
-  getShipsList(): Observable<Ship[]> {
-    return this.http.get<Ship[]>('https://swapi.dev/api/starships')
+  getShipsList(page: number): Observable<Ship[]> {
+    return this.http.get<Ship[]>(`https://swapi.dev/api/starships/?page=${page}`)
   }
 
   getShipById(id: number): Observable<Ship> {

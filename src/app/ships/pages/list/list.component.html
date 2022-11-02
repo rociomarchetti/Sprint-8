@@ -1,5 +1,9 @@
 <div class="container">
-    <div class="row" *ngFor="let item of shipsList">
+    <div class="row" *ngFor="let item of shipsList"
+    infinite-scroll
+    [infiniteScrollDistance]="4"
+    [infiniteScrollThrottle]="2000" 
+    (scrolled)="onScroll()">
         <app-ship-card [ship]="item"></app-ship-card>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { ShipsRoutingModule } from './ships-routing.module';
 
@@ -20,6 +21,7 @@ import { ShipCardComponent } from './components/ship-card/ship-card.component';
   imports: [
     CommonModule,
     ShipsRoutingModule, 
+    InfiniteScrollModule
   ]
 })
 export class ShipsModule { }

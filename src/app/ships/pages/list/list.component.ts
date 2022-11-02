@@ -10,14 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
   shipsList: Ship[] = [];
+  page: number = 1;
   
   constructor( private shipsService: ShipsService) { }
 
   ngOnInit(): void {
-    this.shipsService.getShipsList().subscribe((resp: any) => {
+    this.shipsService.getShipsList(this.page).subscribe((resp: any) => {
       console.log(resp.results);
       this.shipsList = resp.results;
     });
+  }
+
+  onScroll(): void {
+    this.shipsService.getShipsList(this.page++).subscribe((resp: any) => {
+      this.shipsList.push(...resp.results)
+    })
   }
 
 }
