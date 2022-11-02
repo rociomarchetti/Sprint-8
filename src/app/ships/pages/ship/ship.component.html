@@ -1,18 +1,19 @@
-<!-- <ul>
-    <li>
-        <img src="{{imageUrl}}/{{ ship | id}}.jpg"
-            onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'">
-        <h3><strong>{{ship.name}}</strong></h3>
-        <h5>{{ship.model}}</h5>
-        <hr>
-    </li>
-</ul> -->
 
-<div class="card mb-2">
-    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-    <div class="card-body">
-        <h3 class="card-title" [routerLink]="['/ships', ship | id]"><strong>{{ship.name}}</strong></h3>
-        <h5 class="card-text">Model: {{ship.model}}</h5>
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-    </div>
+<div class="starship-data">
+    <img src="{{ imageUrl }}/{{ ship | id}}.jpg"
+    onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'">
+    <h1>{{ ship.name }}</h1>
+    <hr>
+    <h3>Model: {{ ship.model }}</h3>
+    <h3>Manufacturer: {{ ship.manufacturer }}</h3>
+    <h3>Class: {{ ship.starship_class }}</h3>
+    <h3>Cost: {{ ship.cost_in_credits }}</h3>
+    <h3>Speed: {{ ship.max_atmosphering_speed }}</h3>
+    <h3>Hyperdrive Rating: {{ ship.hyperdrive_rating }}</h3>
+    <h3>MGLT: {{ ship.MGLT }}</h3>
+    <h3>Length: {{ ship.length }}</h3>
+    <h3>Cargo Capacity: {{ ship.cargo_capacity }}</h3>
+    <h3>Mimimum Crew: {{ ship.crew }}</h3>
+    <h3>Passengers: {{ ship.passengers }}</h3>
 </div>
+
