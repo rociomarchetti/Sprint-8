@@ -1,19 +1,35 @@
+<div class="building-block container card">
 
-<div class="starship-data">
-    <img src="{{ imageUrl }}/{{ ship | id}}.jpg"
-    onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'">
-    <h1>{{ ship.name }}</h1>
+    <div class="row">
+        <div class="starship-image card-img-top">
+            <img src="{{ imageUrl }}/{{ ship | id}}.jpg"
+                onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'">
+        </div>
+    </div>
+
+    <h3 class="card-title"><strong>{{ ship.name }}</strong></h3>
     <hr>
-    <h3>Model: {{ ship.model }}</h3>
-    <h3>Manufacturer: {{ ship.manufacturer }}</h3>
-    <h3>Class: {{ ship.starship_class }}</h3>
-    <h3>Cost: {{ ship.cost_in_credits }}</h3>
-    <h3>Speed: {{ ship.max_atmosphering_speed }}</h3>
-    <h3>Hyperdrive Rating: {{ ship.hyperdrive_rating }}</h3>
-    <h3>MGLT: {{ ship.MGLT }}</h3>
-    <h3>Length: {{ ship.length }}</h3>
-    <h3>Cargo Capacity: {{ ship.cargo_capacity }}</h3>
-    <h3>Mimimum Crew: {{ ship.crew }}</h3>
-    <h3>Passengers: {{ ship.passengers }}</h3>
-</div>
 
+    <div class="starship-data card-body row">
+
+        <div class="col">
+            <p><strong>Model: </strong>{{ ship.model }}</p>
+            <p><strong>Manufacturer: </strong>{{ ship.manufacturer }}</p>
+            <p><strong>Class: </strong>{{ ship.starship_class }}</p>
+            <p><strong>Cost: </strong>{{ ship.cost_in_credits }}</p>
+            <p><strong>Speed: </strong>{{ ship.max_atmosphering_speed }}</p>
+            <p><strong>Hyperdrive Rating: </strong>{{
+                ship.hyperdrive_rating }}</p>
+        </div>
+
+        <div class="col">
+            <p><strong>MGLT: </strong>{{ ship.MGLT }}</p>
+            <p><strong>Length: </strong>{{ ship.length }}</p>
+            <p><strong>Cargo Capacity: </strong>{{ ship.cargo_capacity
+                }}</p>
+            <p><strong>Mimimum Crew: </strong>{{ ship.crew }}</p>
+            <p><strong>Passengers: </strong>{{ ship.passengers }}</p>
+        </div>
+
+    </div>
+</div>
