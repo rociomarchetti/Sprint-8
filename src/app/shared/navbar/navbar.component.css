@@ -1,0 +1,38 @@
+nav {
+    background-color: black;
+}
+
+img {
+    width: 200px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;   
+}
+
+.nav-tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.274);
+    border-right: 0ch;
+    border-left: 0ch;
+    margin-top: 30px;
+}
+
+.nav-link {
+    margin: 10px;
+    border: 0;
+    color: rgba(255, 255, 255, 0.274);
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    border: 1px solid rgba(255, 255, 255, 0.274);
+    border-top: 0;
+    border-bottom: 0;
+}
