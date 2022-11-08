@@ -12,6 +12,7 @@ h4 {
 .btn {
     background-color: #484848;
     margin-top: 1rem;
+    color: #F3F3F1;
 }
 
 input {
@@ -27,4 +28,18 @@ input {
     display: flex;
     text-align: start;
     
+}
+
+.modal-header, .modal-body {
+    background-color: #181818;
+    font-weight: 100;
+    border: none;
+}
+
+#btn-close {
+    font-size: 31px;
+    font-weight: 700;
+    border: none;
+    color: rgba(255, 255, 255, 0.274);
+    background-color: #181818;
 }

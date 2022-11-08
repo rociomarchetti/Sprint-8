@@ -10,8 +10,5 @@ export class AuthService {
   loggedUser: string = 'Guest';
   usersList: User[] = [];
 
-  
-
   constructor() { }
 }
- 

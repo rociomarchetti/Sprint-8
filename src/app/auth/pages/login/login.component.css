@@ -8,15 +8,6 @@ h4 {
     color: #EBD800;
 }
 
-.btn-close {
-    float: right;
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1;
-    color: aliceblue;
-    opacity: 1;
-}
-
 .btn {
     background-color: #484848;
     margin-top: 1rem;
@@ -24,4 +15,28 @@ h4 {
 
 .row {
     margin: 2rem;
+}
+
+.modal-header, .modal-body {
+    background-color: #181818;
+    font-weight: 100;
+}
+
+.modal-header {
+    border: none;
+}
+
+#btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    background-color: #181818;
+}
+
+#btn-close {
+    font-size: 31px;
+    font-weight: 700;
+    border: none;
+    color: rgba(255, 255, 255, 0.274);
+    background-color: #181818;
 }

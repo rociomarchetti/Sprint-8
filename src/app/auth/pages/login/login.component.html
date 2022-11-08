@@ -1,6 +1,7 @@
 
 <!-- Button trigger modal -->
-<a type="button" id="login-btn" (click)="open(mymodal)" data-bs-toggle="loginModal">
+<a type="button" id="login-btn" (click)="open(mymodal)"
+	data-bs-toggle="loginModal">
 	LOG IN
 </a>
 
@@ -8,12 +9,14 @@
 
 	<!-- Modal -->
 
-	<div class="modal-header bg-dark">
+	<div class="modal-header">
 		<img src="../../../assets/logos.png" class="logos">
-		<button type="button" class="btn-close" aria-label="Close"
-			(click)="loginModal.dismiss('Cross click')"></button>
+		<div id="btn">
+			<button type="button" aria-label="Close" id="btn-close"
+				(click)="loginModal.dismiss('Cross click')">X</button>
+		</div>
 	</div>
-	<div class="modal-body bg-dark text-center">
+	<div class="modal-body text-center">
 		<h4 class="modal-title" id="loginModal">ENTER YOUR EMAIL ADDRESS</h4>
 		<form>
 			<div class="row">
