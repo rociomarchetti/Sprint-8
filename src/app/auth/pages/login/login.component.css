@@ -1,0 +1,27 @@
+#login-btn {
+    margin: 10px;
+    border: 0;
+    color: rgba(255, 255, 255, 0.274);
+}
+
+h4 {
+    color: #EBD800;
+}
+
+.btn-close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: aliceblue;
+    opacity: 1;
+}
+
+.btn {
+    background-color: #484848;
+    margin-top: 1rem;
+}
+
+.row {
+    margin: 2rem;
+}

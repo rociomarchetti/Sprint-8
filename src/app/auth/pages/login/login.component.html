@@ -1,34 +1,29 @@
 
 <!-- Button trigger modal -->
-<button type="button" (click)="open(mymodal)" data-bs-toggle="loginModal">
-  LOG IN 
-</button>
+<a type="button" id="login-btn" (click)="open(mymodal)" data-bs-toggle="loginModal">
+	LOG IN
+</a>
 
 <ng-template #mymodal let-loginModal>
-  
-  <!-- Modal -->
-  <div class="modal-header">
-		<h4 class="modal-title" id="loginModal">Profile update</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="loginModal.dismiss('Cross click')"></button>
+
+	<!-- Modal -->
+
+	<div class="modal-header bg-dark">
+		<img src="../../../assets/logos.png" class="logos">
+		<button type="button" class="btn-close" aria-label="Close"
+			(click)="loginModal.dismiss('Cross click')"></button>
 	</div>
-	<div class="modal-body">
+	<div class="modal-body bg-dark text-center">
+		<h4 class="modal-title" id="loginModal">ENTER YOUR EMAIL ADDRESS</h4>
 		<form>
-			<div class="mb-3">
-				<label for="dateOfBirth">Date of birth</label>
-				<div class="input-group">
-					<input
-						id="dateOfBirth"
-						class="form-control"
-						placeholder="yyyy-mm-dd"
-						name="dp"
-						ngbDatepicker
-					/>
-	<!-- 				<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button> -->
-				</div>
+			<div class="row">
+				<label for="inputEmail">Email address</label>
+				<input type="email" class="form-control" id="inputEmail"
+					aria-describedby="emailHelp" placeholder="Email Address">
+				<button type="submit" class="btn btn-primary"
+					(click)="loginModal.close('Save click')">Continue</button>
 			</div>
 		</form>
 	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark" (click)="loginModal.close('Save click')">Save</button>
-	</div>
+
 </ng-template>

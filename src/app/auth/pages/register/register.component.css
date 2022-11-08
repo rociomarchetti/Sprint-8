@@ -1,0 +1,30 @@
+#register-btn {
+    margin: 10px;
+    border: 0;
+    color: rgba(255, 255, 255, 0.274);
+}
+
+h4 {
+    color: #EBD800;
+    margin-bottom: 0;
+}
+
+.btn {
+    background-color: #484848;
+    margin-top: 1rem;
+}
+
+input {
+    margin-bottom: 1rem;
+}
+
+.row {
+    margin: 2rem;
+}
+
+.form-check p {
+    color: #F3F3F1;
+    display: flex;
+    text-align: start;
+    
+}
