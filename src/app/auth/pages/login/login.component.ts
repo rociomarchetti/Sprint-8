@@ -1,4 +1,6 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -13,7 +15,19 @@ export class LoginComponent implements OnInit {
     this.loginModal.open(content)
   }
 
-  constructor(public loginModal: NgbModal) { }
+  loginForm: FormGroup = this.fb.group({
+    emailForm: ['', [Validators.required, Validators.email]],
+  })
+
+  checkUser() {
+    this.AuthService.checkUser(this.loginForm.value.emailForm)
+  }
+
+  invalid(field: string) {
+    return this.loginForm.controls[field].errors;
+  }
+
+  constructor(public loginModal: NgbModal, private fb: FormBuilder, private AuthService: AuthService) { }
 
   ngOnInit(): void {
   }

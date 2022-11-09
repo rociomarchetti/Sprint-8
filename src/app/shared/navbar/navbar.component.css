@@ -6,7 +6,7 @@ img {
     width: 200px;
     display: inline-block;
     cursor: pointer;
-    position: relative;   
+    position: relative;  
 }
 
 .nav-tab {
@@ -18,11 +18,17 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.274);
     border-right: 0ch;
     border-left: 0ch;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 0;
 }
 
 .nav-link {
+    margin: 10px;
+    border: 0;
+    color: rgba(255, 255, 255, 0.274);
+}
+
+.logout {
     margin: 10px;
     border: 0;
     color: rgba(255, 255, 255, 0.274);
@@ -48,6 +54,11 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+.login span {
+    color: white;
+    font-size: larger;
 }
 
 .login li {

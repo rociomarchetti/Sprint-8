@@ -18,11 +18,15 @@
 	</div>
 	<div class="modal-body text-center">
 		<h4 class="modal-title" id="loginModal">ENTER YOUR EMAIL ADDRESS</h4>
-		<form>
+		<form [formGroup]="loginForm" (ngSubmit)="checkUser()">
 			<div class="row">
-				<label for="inputEmail">Email address</label>
-				<input type="email" class="form-control" id="inputEmail"
+				<input type="email" class="form-control" formControlName="emailForm"
+					id="inputEmail"
 					aria-describedby="emailHelp" placeholder="Email Address">
+				<span class="form-text text-danger ms-5"
+					*ngIf="invalid('emailForm')">
+					* Enter a valid Email
+				</span>
 				<button type="submit" class="btn btn-primary"
 					(click)="loginModal.close('Save click')">Continue</button>
 			</div>
