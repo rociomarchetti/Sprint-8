@@ -10,6 +10,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  submitMSG: string = '';
 
   open(content:any) {
     this.loginModal.open(content)
@@ -21,10 +22,16 @@ export class LoginComponent implements OnInit {
 
   checkUser() {
     this.AuthService.checkUser(this.loginForm.value.emailForm)
+    if ( this.AuthService.loginControl === true) {
+      this.submitMSG = `Welcome back, ${ this.AuthService.loggedUser }`
+    } else {
+      this.submitMSG = 'This user does not seems to exist :('
+    }
   }
 
   invalid(field: string) {
-    return this.loginForm.controls[field].errors;
+    return this.loginForm.get(field)?.invalid &&
+           this.loginForm.get(field)?.touched;
   }
 
   constructor(public loginModal: NgbModal, private fb: FormBuilder, private AuthService: AuthService) { }

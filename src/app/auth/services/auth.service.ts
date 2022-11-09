@@ -7,6 +7,7 @@ import { User } from '../interfaces/user.interface';
 export class AuthService {
   loginControl: boolean = false;
   loggedUser: any = 'Guest';
+  contadorID: number = 1;
   usersList: User[] = [
     {
       id: 1,
@@ -23,13 +24,38 @@ export class AuthService {
       let user = this.usersList.find((user) => user.userEmail === email);
       this.loginControl = true;
       this.loggedUser = user?.userName;
-      this.loginControlToLS(this.loginControl)
-      this.userNameToLS(this.loggedUser)
-      alert(`Welcome ${user?.userName}`);
-    } else {
-      this.loggedUser = 'Guest';
-      alert(`This user does not exist`);
-    }
+      this.loginControlToLS(this.loginControl);
+      this.userNameToLS(this.loggedUser);
+    } 
+  }
+
+  /* Logout */
+
+  logout() {
+    this.loginControl = false;
+    this.loginControlToLS(this.loginControl);
+    this.loggedUser = 'Guest';
+    this.userNameToLS(this.loggedUser);
+  }
+
+  /* Create new user */
+
+  registerUser(name: string, lastname: string, email: string, password: any) {
+    this.contadorID++;
+
+    let newUser: User = {
+      id: this.contadorID,
+      userName: name,
+      userEmail: email,
+      userPassword: password,
+    };
+
+    this.usersList.push(newUser);
+    this.saveUsersToLS(this.usersList);
+    this.loginControl = true;
+    this.loginControlToLS(this.loginControl);
+    this.loggedUser = newUser.userName;
+    this.checkUser(newUser.userEmail);
   }
 
   /* Save to LocalStorage */
@@ -58,15 +84,6 @@ export class AuthService {
 
   getNameFromLS(key: string) {
     this.loggedUser = localStorage.getItem(key);
-  }
-
-  /* Logout */
-
-  logout() {
-    this.loginControl = false;
-    this.loginControlToLS(this.loginControl);
-    this.loggedUser = 'Guest';
-    this.userNameToLS(this.loggedUser);
   }
 
   constructor() {}

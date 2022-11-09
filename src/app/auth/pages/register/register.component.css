@@ -43,3 +43,16 @@ input {
     color: rgba(255, 255, 255, 0.274);
     background-color: #181818;
 }
+
+.form-error {
+    color: #d70605;
+    font-size: medium;
+    margin-bottom: 1em;
+    float: inline-end;
+}
+
+#submitMSG {
+    color: #EBD800;
+    font-size: larger;
+    margin-top: 20px;
+}

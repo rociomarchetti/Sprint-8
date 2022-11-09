@@ -12,8 +12,8 @@
 	<div class="modal-header">
 		<img src="../../../assets/logos.png" class="logos">
 		<div id="btn">
-			<button type="button" aria-label="Close" id="btn-close"
-				(click)="loginModal.dismiss('Cross click')">X</button>
+			<button type="button" aria-label="Close" class="btn-close btn-close-white" 
+				(click)="loginModal.dismiss('Cross click')"></button>
 		</div>
 	</div>
 	<div class="modal-body text-center">
@@ -23,12 +23,12 @@
 				<input type="email" class="form-control" formControlName="emailForm"
 					id="inputEmail"
 					aria-describedby="emailHelp" placeholder="Email Address">
-				<span class="form-text text-danger ms-5"
+				<span class="form-error text-danger"
 					*ngIf="invalid('emailForm')">
-					* Enter a valid Email
+					*Enter a valid email address
 				</span>
-				<button type="submit" class="btn btn-primary"
-					(click)="loginModal.close('Save click')">Continue</button>
+				<button type="submit" class="btn btn-primary">Continue</button>
+				<span id="submitMSG">{{ submitMSG }}</span>
 			</div>
 		</form>
 	</div>

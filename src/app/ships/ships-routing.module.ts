@@ -11,10 +11,6 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
         path: 'list',
         component: ListComponent
       },
