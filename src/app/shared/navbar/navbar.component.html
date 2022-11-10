@@ -18,7 +18,7 @@
                     <app-register></app-register>
             </li>
         </ul>
-        <div *ngIf="loginControl">
+        <div *ngIf="loginControl"> 
             <span>Hello, {{ loggedUser }}</span>
             <p class="logout" type="button" (click)="logout()" routerLink="home">LOG OUT</p>
         </div>

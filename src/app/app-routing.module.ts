@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/guards/auth.guard';
 import { HomeComponent } from './ships/pages/home/home.component';
 
 import { NgModule } from '@angular/core';
@@ -10,7 +11,9 @@ const routes: Routes = [
   },
   {
     path: 'ships',
-    loadChildren: () => import('./ships/ships.module').then( m => m.ShipsModule)
+    loadChildren: () => import('./ships/ships.module').then( m => m.ShipsModule),
+    canLoad: [ AuthGuard ],
+    canActivate: [ AuthGuard ]
   },
   {
     path: '',

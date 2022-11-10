@@ -1,3 +1,4 @@
+
 import { ShipComponent } from './pages/ship/ship.component';
 import { ListComponent } from './pages/list/list.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: 'list',
-        component: ListComponent
+        component: ListComponent,
       },
       {
         path: ':id',

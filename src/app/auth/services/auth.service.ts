@@ -1,3 +1,4 @@
+import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user.interface';
 
@@ -17,6 +18,27 @@ export class AuthService {
     },
   ];
 
+  /* Checking authentication */
+
+  checkAuth(): Observable<boolean> {
+    if (!localStorage.getItem('login')) {
+      return of(false);
+    }
+
+    this.loginControl = true;
+    return of(true);
+  }
+
+  /* Getters */
+
+  get loginC() {
+    return this.loginControl;
+  }
+
+  get user() {
+    return this.loggedUser;
+  }
+
   /* Login */
 
   checkUser(email: string) {
@@ -26,7 +48,7 @@ export class AuthService {
       this.loggedUser = user?.userName;
       this.loginControlToLS(this.loginControl);
       this.userNameToLS(this.loggedUser);
-    } 
+    }
   }
 
   /* Logout */
@@ -34,7 +56,7 @@ export class AuthService {
   logout() {
     this.loginControl = false;
     this.loginControlToLS(this.loginControl);
-    this.loggedUser = 'Guest';
+    this.loggedUser = null;
     this.userNameToLS(this.loggedUser);
   }
 
@@ -55,6 +77,7 @@ export class AuthService {
     this.loginControl = true;
     this.loginControlToLS(this.loginControl);
     this.loggedUser = newUser.userName;
+    this.userNameToLS(this.loggedUser);
     this.checkUser(newUser.userEmail);
   }
 
@@ -65,7 +88,7 @@ export class AuthService {
   }
 
   loginControlToLS(loginControl: boolean) {
-    localStorage.setItem(`login`, JSON.stringify(loginControl));
+    localStorage.setItem('login', JSON.stringify(loginControl));
   }
 
   userNameToLS(userName: string) {
@@ -86,5 +109,14 @@ export class AuthService {
     this.loggedUser = localStorage.getItem(key);
   }
 
-  constructor() {}
+  constructor() {
+    
+    if (localStorage.getItem('login')) {
+      this.loginControl = JSON.parse(localStorage.getItem('login')!)
+    }
+
+    if(localStorage.getItem('userName')) {
+      this.loggedUser = localStorage.getItem('userName')
+    }
+  }
 }
