@@ -1,5 +1,5 @@
 import { Ship } from './../../interfaces/ship.interface';
-import { Pilot } from '../../interfaces/pilot.interface';
+import { Pilot } from './../../interfaces/ship.interface';
 import { ShipsService } from './../../services/ships.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
@@ -11,8 +11,8 @@ import { switchMap, tap } from 'rxjs';
   styleUrls: ['./pilots.component.css'],
 })
 export class PilotsComponent implements OnInit {
-/*   shipPilotsList: string[] = []; */
-  pilotsData: any[] = [];
+
+  pilotsData: Pilot[] = [];
  
   @Input() ship!: Ship;
 
@@ -23,12 +23,16 @@ export class PilotsComponent implements OnInit {
     private ShipsService: ShipsService
   ) {}
 
+  get pilotsList() {
+    return this.ShipsService.pilotsList
+  }
+
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        switchMap(({ id }) => this.ShipsService.getPilot(id)),
+        switchMap(async ({ id }) => this.ShipsService.getPilotsList(id)),
         tap(console.log)
       )
-      .subscribe((pilot) => this.pilotsData.push(pilot));
+      .subscribe((list) => this.pilotsData = list);
   }
 }

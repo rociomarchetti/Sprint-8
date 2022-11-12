@@ -1,1 +1,19 @@
-<p>films works!</p>
+<div class="row">
+    <div *ngFor="let film of filmList">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="{{ imageUrl }}/{{ ship| id }}.jpg"
+          onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'"
+        />
+  
+        <div class="card-body">
+         <h5 class="card-title">{{ film.title }}</h5>
+          <div class="card-text">
+            <p><strong>Episode: </strong>{{ film.episode_id }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
