@@ -9,7 +9,7 @@ import {
   RouterStateSnapshot,
   UrlSegment,
 } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';  
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     return this.AuthService.checkAuth().pipe(
       tap( isLogged => {
         if(!isLogged) {
-          this.router.navigate(['./auth/login'])
+          this.router.navigate(['auth/login'])
         }
       })
     )
@@ -38,7 +38,13 @@ export class AuthGuard implements CanActivate, CanLoad {
     segments: UrlSegment[]
   ): Observable<boolean> | Promise<boolean> | boolean {
 
-    return this.AuthService.checkAuth()
+    return this.AuthService.checkAuth().pipe(
+      tap( isLogged => {
+        if(!isLogged) {
+          this.router.navigate(['auth/login'])
+        }
+      })
+    )
 
   }
 }

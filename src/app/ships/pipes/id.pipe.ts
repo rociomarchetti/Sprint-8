@@ -7,6 +7,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class IdPipe implements PipeTransform {
 
   transform(ship: Ship): string {
-    return ship.url.replace(/\D/g, '');
+    const url: string = ship.url
+    const id: string = url.replace(/\D/g, '');
+    return id
   }
 }

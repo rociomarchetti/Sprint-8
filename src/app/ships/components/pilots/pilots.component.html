@@ -1,0 +1,19 @@
+<div class="row">
+  <div *ngFor="let pilot of pilotsData">
+    <div class="card" style="width: 18rem">
+      <img
+        class="card-img-top"
+        src="{{ imageUrl }}/{{ pilot | id }}.jpg"
+        onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'"
+      />
+
+      <div class="card-body">
+       <h5 class="card-title">{{ pilot['name'] }}</h5>
+        <div class="card-text">
+          <p><strong>Birth Year: </strong>{{ pilot['birth_year'] }}</p>
+          <p><strong>Homeworld: </strong>{{ pilot['homeworld'] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

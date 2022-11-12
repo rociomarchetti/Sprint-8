@@ -9,6 +9,8 @@ import { ListComponent } from './pages/list/list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { IdPipe } from './pipes/id.pipe';
 import { ShipCardComponent } from './components/ship-card/ship-card.component';
+import { PilotsComponent } from './components/pilots/pilots.component';
+import { FilmsComponent } from './components/films/films.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ShipCardComponent } from './components/ship-card/ship-card.component';
     ListComponent,
     HomeComponent,
     IdPipe,
-    ShipCardComponent
+    ShipCardComponent,
+    PilotsComponent,
+    FilmsComponent
   ],
   imports: [
     CommonModule,

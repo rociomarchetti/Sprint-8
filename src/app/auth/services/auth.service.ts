@@ -7,8 +7,9 @@ import { User } from '../interfaces/user.interface';
 })
 export class AuthService {
   loginControl: boolean = false;
-  loggedUser: any = 'Guest';
+  loggedUser: any = 'guest';
   contadorID: number = 1;
+
   usersList: User[] = [
     {
       id: 1,
@@ -21,12 +22,13 @@ export class AuthService {
   /* Checking authentication */
 
   checkAuth(): Observable<boolean> {
-    if (!localStorage.getItem('login')) {
-      return of(false);
-    }
+    let auth = JSON.parse(localStorage.getItem('login')!);
+    console.log(auth);
 
-    this.loginControl = true;
-    return of(true);
+    if (auth === true) {
+      return of(true);
+    }
+    return of(false);
   }
 
   /* Getters */
@@ -56,7 +58,7 @@ export class AuthService {
   logout() {
     this.loginControl = false;
     this.loginControlToLS(this.loginControl);
-    this.loggedUser = null;
+    this.loggedUser = 'guest';
     this.userNameToLS(this.loggedUser);
   }
 
@@ -110,13 +112,12 @@ export class AuthService {
   }
 
   constructor() {
-    
     if (localStorage.getItem('login')) {
-      this.loginControl = JSON.parse(localStorage.getItem('login')!)
+      this.loginControl = JSON.parse(localStorage.getItem('login')!);
     }
 
-    if(localStorage.getItem('userName')) {
-      this.loggedUser = localStorage.getItem('userName')
+    if (localStorage.getItem('userName')) {
+      this.loggedUser = localStorage.getItem('userName');
     }
   }
 }
