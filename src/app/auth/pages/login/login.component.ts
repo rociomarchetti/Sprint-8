@@ -1,6 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,9 +12,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
   submitMSG: string = '';
+  routeControl: boolean = false;
+  currentURL = window.location.href;
 
   open(content: any) {
-    this.loginModal.open(content);
+    this.modalService.open(content);
   }
 
   loginForm: FormGroup = this.fb.group({
@@ -36,10 +39,17 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(
-    public loginModal: NgbModal,
+    public modalService: NgbModal,
     private fb: FormBuilder,
     private AuthService: AuthService,
+    public router: Router,
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if ((this.currentURL.includes('login'))) {
+      this.routeControl = true;
+    } else {
+      this.routeControl = false;
+    }
+  }
 }

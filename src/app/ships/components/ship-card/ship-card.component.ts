@@ -7,6 +7,7 @@ import { Ship } from '../../interfaces/ship.interface';
   styleUrls: ['./ship-card.component.css']
 })
 export class ShipCardComponent {
+  imageUrl: string = 'https://starwars-visualguide.com/assets/img/starships';
 
   @Input() ship!: Ship;
 

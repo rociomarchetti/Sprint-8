@@ -1,0 +1,12 @@
+.page {
+    width: 100%;
+    height: auto;
+    padding: 3.2em;
+}
+
+.page h2,h4 {
+    color: #ebd800;
+    padding: 0.5em;
+    font-family: 'Star Jedi', arial;
+    letter-spacing: 3px;
+}

@@ -1,16 +1,21 @@
-<div class="row">
-  <div *ngFor="let pilot of pilotsList">
-    <div class="card" style="width: 18rem">
-      <img
-        class="card-img-top"
-        src="{{ imageUrl }}/{{ ship| id }}.jpg"
-        onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'"
-      />
+<div *ngIf="pilotsList.length > 0" class="pilots">
+  <hr>
+  <h3>Pilots</h3>
+  <hr>
+  <div class="row row-cols-1 row-cols-md-3">
+    <div *ngFor="let pilot of pilotsList" >
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="{{ imageUrl }}/{{ ship | id }}.jpg"
+          onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'"
+        />
 
-      <div class="card-body">
-       <h5 class="card-title">{{ pilot.name }}</h5>
-        <div class="card-text">
-          <p><strong>Birth Year: </strong>{{ pilot.birth_year }}</p>
+        <div class="card-body">
+          <h5 class="card-title">{{ pilot.name }}</h5>
+          <div class="card-text">
+            <p><strong>Birth Year: </strong>{{ pilot.birth_year }}</p>
+          </div>
         </div>
       </div>
     </div>

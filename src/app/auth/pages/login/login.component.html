@@ -1,36 +1,46 @@
 
-<!-- Button trigger modal -->
-<a type="button" id="login-btn" routerLink="auth/login" (click)="open(mymodal)"
-	data-bs-toggle="loginModal">
-	LOG IN
-</a>
+  <!-- Button trigger modal -->
+  <a
+    type="button"
+    id="login-btn"
+    (click)="open(mymodal)"
+    data-bs-toggle="loginModal"
+  >
+    LOG IN
+  </a>
 
-<ng-template #mymodal let-loginModal>
+  <ng-template #mymodal let-loginModal>
+    <!-- Modal -->
 
-	<!-- Modal -->
-
-	<div class="modal-header">
-		<img src="../../../assets/logos.png" class="logos">
-		<div id="btn">
-			<button type="button" aria-label="Close" class="btn-close btn-close-white" 
-				(click)="loginModal.dismiss('Cross click')"></button>
-		</div>
-	</div>
-	<div class="modal-body text-center">
-		<h4 class="modal-title" id="loginModal">ENTER YOUR EMAIL ADDRESS</h4>
-		<form [formGroup]="loginForm" (ngSubmit)="checkUser()">
-			<div class="row">
-				<input type="email" class="form-control" formControlName="emailForm"
-					id="inputEmail"
-					aria-describedby="emailHelp" placeholder="Email Address">
-				<span class="form-error text-danger"
-					*ngIf="invalid('emailForm')">
-					*Enter a valid email address
-				</span>
-				<button type="submit" class="btn btn-primary">Continue</button>
-				<span id="submitMSG">{{ submitMSG }}</span>
-			</div>
-		</form>
-	</div>
-
-</ng-template>
+    <div class="modal-header">
+      <img src="../../../assets/logos.png" class="logos" />
+      <div id="btn">
+        <button
+          type="button"
+          aria-label="Close"
+          class="btn-close btn-close-white"
+          (click)="loginModal.dismiss('Cross click')"
+        ></button>
+      </div>
+    </div>
+    <div class="modal-body text-center">
+      <h4 class="modal-title" id="loginModal">ENTER YOUR EMAIL ADDRESS</h4>
+      <form [formGroup]="loginForm" (ngSubmit)="checkUser()">
+        <div class="row">
+          <input
+            type="email"
+            class="form-control"
+            formControlName="emailForm"
+            id="inputEmail"
+            aria-describedby="emailHelp"
+            placeholder="Email Address"
+          />
+          <span class="form-error text-danger" *ngIf="invalid('emailForm')">
+            *Enter a valid email address
+          </span>
+          <button type="submit" class="btn btn-primary">Continue</button>
+          <span id="submitMSG">{{ submitMSG }}</span>
+        </div>
+      </form>
+    </div>
+  </ng-template>

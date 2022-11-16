@@ -1,39 +1,36 @@
-<div class="building-block container card">
-
-    <div class="row">
-
-        <div class="starship-image col-7">
-            <img src="{{ imageUrl }}/{{ ship | id}}.jpg"
-                onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'">
-        </div>
-
-        <div class="col-5">
-
-            <h3 class="card-title"><strong>{{ ship.name }}</strong></h3>
-
-            <div class="starship-data card-body">
-                <div class="data-left">
-                    <p><strong>Model: </strong>{{ ship.model }}</p>
-                    <p><strong>Manufacturer: </strong>{{ ship.manufacturer }}</p>
-                    <p><strong>Class: </strong>{{ ship.starship_class }}</p>
-                    <p><strong>Cost: </strong>{{ ship.cost_in_credits }}</p>
-                    <p><strong>Speed: </strong>{{ ship.max_atmosphering_speed }}</p>
-                    <p><strong>Hyperdrive Rating: </strong>{{
-                        ship.hyperdrive_rating }}</p>
-                </div>
-
-                <div class="data-right">
-                    <p><strong>MGLT: </strong>{{ ship.MGLT }}</p>
-                    <p><strong>Length: </strong>{{ ship.length }}</p>
-                    <p><strong>Cargo Capacity: </strong>{{ ship.cargo_capacity
-                        }}</p>
-                    <p><strong>Mimimum Crew: </strong>{{ ship.crew }}</p>
-                    <p><strong>Passengers: </strong>{{ ship.passengers }}</p>
-                </div>
-            </div>
-        </div>
-
+<div class="building-block card">
+  <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 row-cols-lg-3">
+    <div class="starship-image">
+      <img
+        src="{{ imageUrl }}/{{ ship | id }}.jpg"
+        onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'"
+      />
     </div>
+
+    <div class="card-body">
+      <h3 class="card-title">{{ ship.name }}</h3>
+      <div class="starship-data">
+        <div class="data-left">
+          <p><strong>Model: </strong>{{ ship.model }}</p>
+          <p><strong>Manufacturer: </strong>{{ ship.manufacturer }}</p>
+          <p><strong>Class: </strong>{{ ship.starship_class }}</p>
+          <p><strong>Cost: </strong>{{ ship.cost_in_credits }}</p>
+          <p><strong>Speed: </strong>{{ ship.max_atmosphering_speed }}</p>
+          <p>
+            <strong>Hyperdrive Rating: </strong>{{ ship.hyperdrive_rating }}
+          </p>
+        </div>
+
+        <div class="data-right">
+          <p><strong>MGLT: </strong>{{ ship.MGLT }}</p>
+          <p><strong>Length: </strong>{{ ship.length }}</p>
+          <p><strong>Cargo Capacity: </strong>{{ ship.cargo_capacity }}</p>
+          <p><strong>Mimimum Crew: </strong>{{ ship.crew }}</p>
+          <p><strong>Passengers: </strong>{{ ship.passengers }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <app-pilots></app-pilots>

@@ -1,58 +1,103 @@
 #register-btn {
-    margin: 10px;
-    border: 0;
-    color: rgba(255, 255, 255, 0.274);
+  margin: 10px;
+  border: 0;
+  color: #999;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#register-btn:hover {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
 }
 
 h4 {
-    color: #EBD800;
-    margin-bottom: 0;
+  color: #ebd800;
+  margin-bottom: 0;
 }
 
 .btn {
-    background-color: #484848;
-    margin-top: 1rem;
-    color: #F3F3F1;
+  background-color: #484848;
+  margin-top: 1rem;
+  color: #f3f3f1;
 }
 
 input {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .row {
-    margin: 2rem;
+  margin: 2rem;
 }
 
-.form-check p {
-    color: #F3F3F1;
-    display: flex;
-    text-align: start;
-    
+.message span {
+  color: #f3f3f1;
+  display: flex;
+  text-align: start;
+  font-size: 1 rem;
+  line-height: 1.5rem;
 }
 
-.modal-header, .modal-body {
-    background-color: #181818;
-    font-weight: 100;
-    border: none;
+.message {
+  color: #f3f3f1;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  text-align: start;
+ 
+}
+
+.message span {
+  color: #edd700;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.modal-header,
+.modal-body {
+  background-color: #181818;
+  font-weight: 100;
+  border: none;
+}
+
+.modal-title {
+  color: #edd700;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  text-transform: uppercase;
 }
 
 #btn-close {
-    font-size: 31px;
-    font-weight: 700;
-    border: none;
-    color: rgba(255, 255, 255, 0.274);
-    background-color: #181818;
+  font-size: 31px;
+  font-weight: 700;
+  border: none;
+  color: rgba(255, 255, 255, 0.274);
+  background-color: #181818;
 }
 
 .form-error {
-    color: #d70605;
-    font-size: medium;
-    margin-bottom: 1em;
-    float: inline-end;
+  color: red;
+  margin-bottom: 1em;
+  text-align: start;
+  font-size: small;
 }
 
 #submitMSG {
-    color: #EBD800;
-    font-size: larger;
-    margin-top: 20px;
+  color: yellow;
+  font-size: larger;
+  margin-top: 20px;
 }
+
+.ng-invalid:not(form)  {
+  border: 2px solid red;
+}
+
+.ng-valid {
+  border: 2px solid yellow;
+}
+
+

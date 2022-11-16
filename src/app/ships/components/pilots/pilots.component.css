@@ -1,0 +1,25 @@
+hr {
+  color: white;
+}
+
+h3 {
+  margin-left: 1em;
+}
+
+.card {
+  margin: 2em;
+}
+
+.pilots {
+  width: 97vw;
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        margin-left: 5em;
+    }
+
+    .pilots {
+        margin-top: 2em;
+    }
+}

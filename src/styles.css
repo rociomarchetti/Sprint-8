@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    width: calc(100vw - (100vw - 100%));
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1, h2, h3, h4, h5, h6, input, textarea, select {
+    font-family: DIN, Helvetica, Arial, sans-serif;
+    color: #aaa;
+    font-weight: 600;
+}

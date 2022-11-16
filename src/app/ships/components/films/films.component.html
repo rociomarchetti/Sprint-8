@@ -1,6 +1,10 @@
-<div class="row">
+<div *ngIf="filmList.length > 0" class="films">
+  <hr>
+  <h3>Films</h3>
+  <hr>
+<div class="row row-cols-1 row-cols-md-3">
     <div *ngFor="let film of filmList">
-      <div class="card" style="width: 18rem">
+      <div class="card">
         <img
           class="card-img-top"
           src="{{ imageUrl }}/{{ ship| id }}.jpg"
@@ -16,4 +20,5 @@
       </div>
     </div>
   </div>
+</div>
   

@@ -1,43 +1,102 @@
-
 .building-block {
-    margin-bottom: 3rem;
-    font-size: 1rem;
-    color:#ddd;
-    padding: 0;
-    border: 0;
-    font-family: DIN, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  color: #ddd;
+  padding: 0;
+  border: 0;
+  font-family: DIN, Helvetica, Arial, sans-serif;
+}
+
+.row {
+  margin: 0;
 }
 
 h3 {
-    font-size: 0.99em;
-    line-height: 1.3em;
-    letter-spacing: 0.06em;
-    color: #ddd;
-    text-transform: uppercase;   
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 25px;
-    line-height: 25px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+  font-size: 0.99em;
+  line-height: 1.3em;
+  letter-spacing: 0.06em;
+  color: #ddd;
+  text-transform: uppercase;
+  margin: 0.5em;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  
 }
 
 .card {
-    background-color: rgb(73, 73, 73);
-    background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.048), rgba(255, 255, 255, 0.034) 1px, transparent 1px, transparent 6px);
-} 
+  margin-top: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: inline-block;
+  background-color: rgb(73, 73, 73);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.048),
+    rgba(255, 255, 255, 0.034) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  height: auto;
+  text-align: left;
+}
+
+.card-body {
+  margin-left: 25em;
+}
 
 .starship-image img {
-    height: 70vh;
-    margin: 0;
-    border-style: solid;
-    border-width: 0 4px 0 0;
-    border-color: #9e4f60;
+  height: auto;
+  margin: 0;
+  border-style: solid;
+  border-width: 0 4px 0 0;
+  border-color: #9e4f60;
 }
 
 .starship-data {
+  display: flex;
+  flex-direction: row;
+}
+
+.data-left {
+  padding: 0.5em;
+}
+
+.data-right {
+  padding: 0.5em;
+}
+
+@media screen and (max-width: 992px) {
+  .card {
     display: flex;
-    flex-direction: row;
-    padding: 2em;
+    flex-direction: column;
+    background-color: rgb(73, 73, 73);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.048),
+      rgba(255, 255, 255, 0.034) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+    height: auto;
+    margin: 1em;
+  }
+
+  .starship-image img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-style: solid;
+    border-width: 0 0 4px 0;
+    border-color: #9e4f60;
+  }
+
+  .starship-data {
+    text-align: left;
+  }
+
+  .card-body {
+    margin: 0;
+  }
 }

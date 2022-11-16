@@ -2,6 +2,13 @@ li {
     list-style: none;
   }
 
-  .container {
-    color:antiquewhite
+  .list {
+    margin: 0px;
+    height: 100%;
+    width: auto;
+    color:antiquewhite;
+    display: flex;
+    flex-direction: column;
+    font-weight: lighter;
+    font-family: 'Star Jedi', arial;
   }

@@ -1,3 +1,4 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AuthService } from './../../auth/services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,10 +12,12 @@ import { LoginComponent } from 'src/app/auth/pages/login/login.component';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  public isCollapsed = true;
 
   constructor(
     public router: Router,
     private AuthService: AuthService,
+    public mymodal: NgbModal
   ) {}
 
   get loggedUser() {
@@ -24,7 +27,7 @@ export class NavbarComponent implements OnInit {
   get loginControl() {
     return this.AuthService.loginControl;
   }
-
+  
   logout() {
     this.AuthService.logout();
   }

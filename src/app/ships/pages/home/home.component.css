@@ -1,16 +1,31 @@
-
 .home {
-    margin: 0px;
-    height: 100%;
-    background-color: #0e0e0e;
-    background-image: url("/src/assets/starfield.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  margin: 0px;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1544656376-ffe19d4b7353?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBza3l8ZW58MHx8MHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-img {
-    width: 98vw;
-    height: 98vh;
+.large {
+  padding: 2em;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+.small {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .large {
+    display: none;
+  }
+
+  .small {
+    padding: 2em;
+    width: auto;
     display: block;
     margin: auto;
+  }
 }

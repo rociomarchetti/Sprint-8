@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -25,7 +26,8 @@ import { FilmsComponent } from './components/films/films.component';
   imports: [
     CommonModule,
     ShipsRoutingModule, 
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgbModule
   ]
 })
 export class ShipsModule { }
