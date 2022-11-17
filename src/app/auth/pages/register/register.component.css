@@ -81,7 +81,7 @@ input {
 
 .form-error {
   color: red;
-  margin-bottom: 1em;
+  margin: 0.2em;
   text-align: start;
   font-size: small;
 }
@@ -92,12 +92,5 @@ input {
   margin-top: 20px;
 }
 
-.ng-invalid:not(form)  {
-  border: 2px solid red;
-}
-
-.ng-valid {
-  border: 2px solid yellow;
-}
 
 

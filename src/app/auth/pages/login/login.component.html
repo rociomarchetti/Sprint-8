@@ -24,20 +24,30 @@
       </div>
     </div>
     <div class="modal-body text-center">
-      <h4 class="modal-title" id="loginModal">ENTER YOUR EMAIL ADDRESS</h4>
+      <h4 class="modal-title" id="loginModal">Please enter email and password</h4>
       <form [formGroup]="loginForm" (ngSubmit)="checkUser()">
         <div class="row">
           <input
             type="email"
-            class="form-control"
+            class="form-control mb-2"
             formControlName="emailForm"
             id="inputEmail"
             aria-describedby="emailHelp"
             placeholder="Email Address"
           />
           <span class="form-error text-danger" *ngIf="invalid('emailForm')">
-            *Enter a valid email address
+            Enter a valid email address
           </span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="passForm"
+              id="inputPass"
+              placeholder="Password"
+            />
+            <span class="form-error text-danger" *ngIf="invalid('passForm')">
+              Enter a valid password
+            </span>
           <button type="submit" class="btn btn-primary">Continue</button>
           <span id="submitMSG">{{ submitMSG }}</span>
         </div>

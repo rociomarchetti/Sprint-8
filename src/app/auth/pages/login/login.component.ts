@@ -21,10 +21,11 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = this.fb.group({
     emailForm: ['', [Validators.required, Validators.email]],
+    passForm: ['', [Validators.required, Validators.minLength(4)]]
   });
 
   checkUser() {
-    this.AuthService.checkUser(this.loginForm.value.emailForm);
+    this.AuthService.checkUser(this.loginForm.value.emailForm, this.loginForm.value.passForm);
     if (this.AuthService.loginControl === true) {
       this.submitMSG = `Welcome back, ${this.AuthService.loggedUser}`;
     } else {

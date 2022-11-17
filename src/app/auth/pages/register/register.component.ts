@@ -32,7 +32,8 @@ export class RegisterComponent implements OnInit {
       let e: string = this.registerForm.value.email;
       let p: string = this.registerForm.value.password;
       this.AuthService.registerUser(n, l, e, p);
-      this.submitMSG = 'New user registered with success! You can close this window now'
+      /* this.submitMSG = 'New user registered with success!' */
+      this.registerModal.dismissAll()
     } else {
       this.registerForm.markAllAsTouched();
       this.submitMSG = 'Something went wrong :('

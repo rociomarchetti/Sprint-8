@@ -34,7 +34,7 @@ h4 {
 
 .modal-title {
   color: #edd700;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: lighter;
   text-transform: uppercase;
 }
@@ -55,4 +55,11 @@ h4 {
   color: #ebd800;
   font-size: larger;
   margin-top: 20px;
+}
+
+.form-error {
+  color: red;
+  margin: 0.2em;
+  text-align: start;
+  font-size: small;
 }

@@ -43,7 +43,7 @@ export class AuthService {
 
   /* Login */
 
-  checkUser(email: string) {
+  checkUser(email: string, password: any) {
     if (this.usersList.find((user) => user.userEmail === email)) {
       let user = this.usersList.find((user) => user.userEmail === email);
       this.loginControl = true;
@@ -80,7 +80,7 @@ export class AuthService {
     this.loginControlToLS(this.loginControl);
     this.loggedUser = newUser.userName;
     this.userNameToLS(this.loggedUser);
-    this.checkUser(newUser.userEmail);
+    this.checkUser(newUser.userEmail, newUser.userPassword);
   }
 
   /* Save to LocalStorage */
