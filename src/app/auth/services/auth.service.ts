@@ -1,6 +1,7 @@
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user.interface';
+import { Route, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -50,6 +51,7 @@ export class AuthService {
       this.loggedUser = user?.userName;
       this.loginControlToLS(this.loginControl);
       this.userNameToLS(this.loggedUser);
+      this.router.navigate(['ships/list']);
     }
   }
 
@@ -111,7 +113,7 @@ export class AuthService {
     this.loggedUser = localStorage.getItem(key);
   }
 
-  constructor() {
+  constructor(private router: Router) {
     if (localStorage.getItem('login')) {
       this.loginControl = JSON.parse(localStorage.getItem('login')!);
     }
